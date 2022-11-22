@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -13,21 +13,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +20,159 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Spinner */
+@keyframes ldio-rpinwye8j0b {
+  0% { transform: rotate(0deg) }
+  50% { transform: rotate(180deg) }
+  100% { transform: rotate(360deg) }
+}
+
+@keyframes spin {
+  from{transform: rotate(0deg);}
+  to{transform: rotate(360deg);}
+}
+
+.loader {
+  border: 2px solid #FFFFFF; 
+  border-top-color: #003d6c; 
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  /* animation: spin 1s infinite; */
+  animation: ldio-rpinwye8j0b 1s linear infinite;;
+}
+
+.loader1 {
+  border: 7px solid #FFFFFF; 
+  border-top-color: #003d6c; 
+  width: 70px; 
+  height: 70px; 
+  border-radius: 50%; 
+  /* animation: spin 1s infinite; */
+  animation: ldio-rpinwye8j0b 1s linear infinite;
+}
+
+/* Custom checkbox */
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #003d6c!important;
+}
+
+.custom-checkbox .custom-control-input:checked:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 255, 0, 0.25)
+}
+.custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 0, 0, 0.25)
+}
+.custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #C8FFC8; 
+}
+/* Custom checkbox - end */
+
+/* Custom radio */
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #003d6c!important;
+}
+
+.custom-radio .custom-control-input:checked:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 255, 0, 0.25)
+}
+.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 0, 0, 0.25)
+}
+.custom-radio .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #C8FFC8; 
+}
+/* Custom radio - end */
+
+
+/* Hide image on mobile view */
+#mobile_only {
+  display: none;
+}
+
+.form-control:focus {
+  border-color: #003d6c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgb(0, 61, 108); 
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgb(0, 61, 108);
+}
+
+.btn-control:focus {
+  border-color: #003d6c;
+  -webkit-box-shadow: none; 
+  box-shadow: none;
+}
+
+.btn-color {
+  background-color: #1D79D0;
+}
+
+.btn-color-light {
+  background-color: #FFFFFF;
+  border-color: #1D79D0;
+}
+
+.btn-color:hover {
+  background-color: #0f3655;
+}
+
+.txt-color {
+  color: #1D79D0;
+}
+
+.txt-color:hover {
+  color: #6da3d6;
+}
+
+.blue-background {
+  background-color: #003d6c;
+  z-index: 1;
+}
+
+.logo100crypto {
+  position: relative;
+  background: url('./assets/100kCrypto.png') no-repeat;
+  background-size: auto;
+  background-position: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.login-form {
+  width: 60%;
+  height: 60%;
+  margin-bottom: 5;
+  text-align: center;
+}
+
+.bg-login {
+  position: relative;
+  background: url('./assets/login-image.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.blue-overlay {
+  background-color: #003c6b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.overlay-effect {
+  position: absolute;
+  border-radius: 2px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  background-color: #003c6b;
+  overflow: hidden;
+  z-index: 1;
 }

@@ -1,9 +1,16 @@
 import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom'
+import AnimatedRoutes from './layout/AnimatedRoutes';
+import ScreenDimensions from './layout/ScreenDimensions';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>This is a crypto site!</h1>
+      <Router>
+        <ScreenDimensions>
+          <AnimatedRoutes />
+        </ScreenDimensions>
+      </Router>
     </div>
   );
 }
