@@ -6,6 +6,8 @@ import classnames from 'classnames'
 import { useNavigate } from 'react-router-dom'
 import Spinner from '../common/Spinner'
 import { useSelector } from 'react-redux'
+import CheckBox from '../common/CheckBox'
+import TextField from '../common/TextField'
 
 const Login = () => {
 
@@ -70,60 +72,63 @@ const Login = () => {
             className="container-fluid"
         >
             <div className="row">
-                <div className="col-md-6 bg-login" id={windowDimension.winWidth <= 820 && 'mobile_only'} style={{ position: 'sticky', top: '0px' }}>
+                <div
+                    className="col-md-6 bg-login"
+                    id={windowDimension.winWidth <= 820 && 'mobile_only'}
+                    style={{ position: 'sticky', top: '0px' }}
+                >
                     <div className='blue-overlay' />
                 </div>
+
                 <div className="col-md-6 blue-background">
                     <div className='text-center mt-4'>
                         <img src={logo100crypto} alt='100k Crypto' />
                     </div>
+                    
                     <div
                         className='shadow-sm bg-white rounded ms-auto me-auto mt-3'
-                        style={{ height: windowDimension.winWidth <= 820 ? '73%' : '68%', width: '65%' }}
+                        style={{ height: windowDimension.winWidth <= 820 ? '73%' : '65%', width: '65%' }}
                     >
                         <div className='m-4'>
                             <div style={{ opacity: 0 }}>Invisible Text</div>
                             <h5>Welcome</h5>
                             <small>Please enter the details below to sign into your account</small>
-                            <h6 className='mt-3'><small>Email Address</small></h6>
-                            <div className='input-group rounded'>
-                                <input
-                                    type="email"
-                                    className={classnames('form-control text-truncate', { "is-invalid": errorEmail })}
-                                    placeholder='Email'
-                                    value={email}
-                                    onChange={(e) => {
-                                        setEmail(e.target.value)
-                                        setErrorEmail('')
-                                    }}
-                                    style={{ height: '3rem', borderRadius: '5px' }}
-                                    disabled={isDeactivated}
-                                />
-                                <div className='invalid-feedback'>{errorEmail}</div>
-                            </div>
 
-                            <h6 className='mt-3'><small>Password</small></h6>
-                            <div className='input-group rounded'>
-                                <input
-                                    type="password"
-                                    className={classnames('form-control text-truncate', { "is-invalid": errorPassword })}
-                                    placeholder='Password'
-                                    value={password}
-                                    onChange={(e) => {
-                                        setPassword(e.target.value)
-                                        setErrorPassword('')
-                                    }}
-                                    style={{ height: '3rem', borderRadius: '5px' }}
-                                    disabled={isDeactivated}
-                                />
-                                <div className='invalid-feedback'>{errorPassword}</div>
-                            </div>
+                            <TextField
+                                marginTop='mt-3'
+                                title='Email Address'
+                                type='email'
+                                error={errorEmail}
+                                placeHolder='Email'
+                                value={email}
+                                onChange={(e) => {
+                                    setEmail(e.target.value)
+                                    setErrorEmail('')
+                                }}
+                                style={{ height: '3rem', borderRadius: '5px' }}
+                                isActive={isDeactivated}
+                            />
 
+                            <TextField
+                                marginTop='mt-3'
+                                title='Password'
+                                type='password'
+                                error={errorPassword}
+                                placeHolder='Password'
+                                value={password}
+                                onChange={(e) => {
+                                    setPassword(e.target.value)
+                                    setErrorPassword('')
+                                }}
+                                style={{ height: '3rem', borderRadius: '5px' }}
+                                isActive={isDeactivated}
+                            />
+                            
                             <div className='text-left mt-2 mb-4'>
-                                <span>
-                                    <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} checked={isChecked} />
-                                </span>
-                                <span> Remember me</span>
+                                <CheckBox
+                                    label='Remember me'
+                                    onCheckedHandler={() => setIsChecked(!isChecked)}
+                                />
                             </div>
 
                             <LoginButton />
